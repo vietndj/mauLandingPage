@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
+
+    <!-- ── PRIMARY META ─────────────────────────────────────── -->
+    <title>Landing Page Bán Hàng</title>
+    <meta name="description" content="Trang bán hàng chuyên nghiệp" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href="https://video.fedu.vn/" />
+
+    <!-- ── OPEN GRAPH (Facebook / Zalo / Messenger) ──────────── -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Landing Page Bán Hàng" />
+    <meta property="og:description" content="Trang bán hàng chuyên nghiệp" />
+    <meta property="og:image" content="" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="720" />
+    <meta property="og:image:alt" content="Landing Page Bán Hàng" />
+    <meta property="og:locale" content="vi_VN" />
+
+    <!-- ── TWITTER / X CARD ──────────────────────────────────── -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:title" content="Landing Page Bán Hàng" />
+    <meta name="twitter:description" content="Trang bán hàng chuyên nghiệp" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:image:alt" content="Landing Page Bán Hàng" />
+
+    <!-- ── STRUCTURED DATA (JSON-LD) ─────────────────────────── -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Tư Duy Làm Video Điện Thoại: Quay Là Cuốn",
+      "description": "Khóa học quay dựng video bằng điện thoại: hệ thống 9 module giúp bạn tự quay dựng video cuốn hút. Từ setup ánh sáng, thần thái trước camera, nhịp điệu cắt cảnh, đến kịch bản AI phân cảnh.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Fedu.vn",
+        "url": "https://fedu.vn",
+        "sameAs": ["https://fedu.vn"]
+      },
+      "instructor": {
+        "@type": "Person",
+        "name": "Nguyễn Đức Việt",
+        "jobTitle": "Đạo diễn Hình ảnh · Giảng viên FPT Arena · Founder Fedu.vn",
+        "alumniOf": "Đại học Bách Khoa TP.HCM"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "599000",
+        "priceCurrency": "VND",
+        "availability": "https://schema.org/InStock",
+        "priceValidUntil": "2026-12-31",
+        "url": "https://video.fedu.vn/"
+      },
+      "courseMode": "online",
+      "inLanguage": "vi",
+      "image": "https://video.fedu.vn/opengraph.jpg",
+      "url": "https://video.fedu.vn/",
+      "educationalLevel": "Beginner to Advanced",
+      "teaches": ["Quay video", "Dựng video", "Video marketing", "Ánh sáng quay phim", "Chuyển cảnh tàng hình", "Video bán hàng", "AI workflow"],
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "courseWorkload": "PT14D"
+      }
+    }
+    </script>
+
+    <!-- ── FAVICON ─────────────────────────────────────────── -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=4" />
+    <meta name="theme-color" content="#08080a" />
+    <meta name="msapplication-TileColor" content="#08080a" />
+
+    <!-- ── PERFORMANCE: Preconnect & Font ────────────────────── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="error-display" style="display:none; color: #ff3b30; background: #1a0f0f; padding: 24px; font-family: monospace; border: 2px solid #ff3b30; border-radius: 12px; position: fixed; top: 20px; left: 20px; right: 20px; z-index: 999999; box-shadow: 0 10px 30px rgba(0,0,0,0.5); line-height: 1.5; font-size: 14px; max-height: 80vh; overflow-y: auto;">
+      <h3 style="margin-top:0; font-size: 18px; border-bottom: 1px solid rgba(255,59,48,0.3); padding-bottom: 8px; margin-bottom: 12px;">🔴 Lỗi Khởi Chạy (Runtime Error)</h3>
+      <pre id="error-message" style="white-space: pre-wrap; word-break: break-all; margin: 0; color: #ff8c82;"></pre>
+    </div>
+    <script>
+      window.addEventListener('error', function(e) {
+        var display = document.getElementById('error-display');
+        var message = document.getElementById('error-message');
+        if (display && message) {
+          display.style.display = 'block';
+          message.textContent = e.message + '\nTại: ' + e.filename + ':' + e.lineno + ':' + e.colno + '\n\nChi tiết:\n' + (e.error ? e.error.stack : 'N/A');
+        }
+      });
+      window.addEventListener('unhandledrejection', function(e) {
+        var display = document.getElementById('error-display');
+        var message = document.getElementById('error-message');
+        if (display && message) {
+          display.style.display = 'block';
+          message.textContent = 'Unhandled Promise Rejection: ' + e.reason + '\n\nChi tiết:\n' + (e.reason && e.reason.stack ? e.reason.stack : 'N/A');
+        }
+      });
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
