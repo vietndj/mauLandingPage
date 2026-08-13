@@ -20,32 +20,28 @@ const GREEN = "#10b981"; // Emerald green for success states
 
 const LANTAN_FAQS = [
   {
-    q: "1. \"Mình mù công nghệ, dùng điện thoại đời cũ thì có theo học được không?\"",
-    a: "Chắc chắn được. Khóa học này không dạy bạn các kỹ xảo phức tạp trên máy tính. Sự \"đắt tiền\" của video đến từ Tư duy Không gian. Mình sẽ hướng dẫn bạn tận dụng tối đa chiếc điện thoại đang có. Chỉ cần setup đúng góc máy và ánh sáng cơ bản, khung hình của bạn sẽ sắc nét và sang trọng không thua gì thợ quay chuyên nghiệp."
+    q: "1. \"Tôi dùng CapCut trên điện thoại có dùng được bộ template này không?\"",
+    a: "Hoàn toàn được! Bộ template được đóng gói chuẩn định dạng tương thích 100% với CapCut (iOS & Android) cũng như Premiere Pro, After Effects, DaVinci Resolve trên máy tính PC/Mac. Có video hướng dẫn 1-click apply cực kỳ dễ dàng."
   },
   {
-    q: "2. \"Mình rất ngại lên hình, cứ bật máy quay là đơ cứng và quên kịch bản?\"",
-    a: "Sự đơ cứng đến từ việc bạn đang tự tạo áp lực \"trả bài\" trước ống kính. Mình sẽ hướng dẫn bạn setup góc máy ngồi chéo trò chuyện cực kỳ tự nhiên; và đặc biệt là kỹ thuật dùng Cảnh trám (B-roll). Lỡ nói vấp? Không sao cả, B-roll sẽ đắp vào và che đi mọi vết cắt một cách êm ái. Bạn không cần phải cố gồng mình để \"diễn\"!"
+    q: "2. \"Tôi chưa từng học dựng video bao giờ thì có làm được không?\"",
+    a: "Rất dễ dàng! Bạn không cần biết dùng hiệu ứng phức tạp. Cấu trúc template đã được dựng sẵn khung hình, hiệu ứng chữ và âm thanh. Bạn chỉ cần kéo thả clip quay nhà đất của mình vào là video tự động đẹp như phim."
   },
   {
-    q: "3. \"Tôi rất bận kinh doanh, sợ không có thời gian ngồi viết kịch bản?\"",
-    a: "Xây dựng hình ảnh là để tối ưu công việc kinh doanh, không phải để vắt kiệt sức lực của bạn! Khóa học đã tích hợp sẵn Bộ lệnh (Prompt) Trợ lý AI chuyên sâu. Bạn chỉ cần Copy-paste vào ChatGPT hoặc Gemini, AI sẽ tự động trả về kịch bản phân rã 2 cột chi tiết. Rút ngắn 80% thời gian chuẩn bị để bạn rảnh tay làm chuyên môn."
+    q: "3. \"Sau khi chuyển khoản 149.000đ thì tôi nhận tài nguyên bằng cách nào?\"",
+    a: "Hệ thống thanh toán vận hành tự động 24/7. Ngay khi bạn quét mã VietQR thành công, link tải Google Drive trọn bộ template tốc độ cao kèm video hướng dẫn sẽ được gửi ngay lập tức qua Zalo và Email của bạn trong vòng 1 phút."
   },
   {
-    q: "4. \"Tôi đã xem rất nhiều hướng dẫn CapCut trên mạng, khóa này có gì khác biệt?\"",
-    a: "Các video miễn phí chỉ dạy bạn \"mẹo vặt\" (bấm hiệu ứng chớp nháy, lật trang 3D). Những thứ đó làm mắt khách hàng mệt mỏi và hạ thấp giá trị thương hiệu. Ở đây, mình trao cho bạn một Khuôn mẫu Kiến trúc Thị giác. Hiểu được gốc rễ TẠI SAO phải dùng góc Cận Cảnh, TẠI SAO phải chuyển cảnh vật lý, bạn sẽ tự chủ sản xuất mà không bao giờ sợ bị nền tảng đổi thuật toán."
+    q: "4. \"Bộ template có được cập nhật thêm các mẫu mới sau này không?\"",
+    a: "Có! Bạn mua 1 lần sở hữu VĨNH VIỄN và được truy cập link cập nhật các mẫu Text Animation & Sound Effects mới hoàn toàn miễn phí trong tương lai."
   },
   {
-    q: "5. \"Đầu tư số tiền này liệu có mang lại hiệu quả thực tế không?\"",
-    a: "Hãy làm một phép tính thực tế: Nếu bạn chạy Ads bằng những video lôm côm, phẳng lì, khách lướt qua trong 3 giây... bạn đang đốt tiền quảng cáo mỗi ngày một cách vô ích. Đầu tư khóa học này một lần, bạn đang xây dựng một \"Tấm khiên\" bảo vệ ngân sách chạy Ads, tiết kiệm chi phí thuê Media ngoài và tăng tỷ lệ chuyển đổi dài hạn."
+    q: "5. \"Nhạc nền và hiệu ứng âm thanh có bị bản quyền trên TikTok/Facebook Reels không?\"",
+    a: "Toàn bộ 50+ bản nhạc nền Cinematic và 200+ SFX đã được kiểm duyệt kỹ lưỡng, đảm bảo Clean 100% không bị đánh gậy bản quyền hay bóp tương tác khi chạy quảng cáo."
   },
   {
-    q: "6. \"Tôi chuyển khoản xong thì bao lâu mới được vào học? Có sợ bị lỗi không?\"",
-    a: "Ngay lập tức. Hệ thống vận hành tự động 100%. Ngay khi bạn quét mã QR thanh toán thành công, tài khoản học sẽ được gửi qua Zalo và Email của bạn chỉ trong vòng 1-2 phút, bất kể là 12h đêm. Bạn có thể mở ra và bắt đầu học ngay lập tức."
-  },
-  {
-    q: "7. \"Nếu tôi học xong, làm theo mà video vẫn không đẹp lên thì sao?\"",
-    a: "Uy tín 15 năm làm nghề của mình được đặt lên hàng đầu. Khóa học có một Cam kết đồng hành bảo vệ rủi ro: Sau khi học, nếu bạn đã setup đúng góc máy, ánh sáng mà video vẫn chưa chuyên nghiệp, hãy gửi video đó qua Zalo. Đích thân mình sẽ quay màn hình \"bắt bệnh\" và sửa lỗi 1-1 cho bạn đến khi ưng ý. Mình nhận rủi ro về phần mình, để bạn yên tâm đầu tư!"
+    q: "6. \"Nếu tôi gặp rắc rối khi tải hoặc chèn template thì hỗ trợ ra sao?\"",
+    a: "Đội ngũ kỹ thuật hỗ trợ 1-1 trực tiếp qua Zalo. Chúng tôi cam kết đồng hành cùng bạn cho đến khi xuất bản thành công video BĐS đầu tiên!"
   }
 ];
 

@@ -33,7 +33,7 @@ export function HeroSection() {
               width: 8, height: 8, borderRadius: "50%", background: "#ef4444",
               boxShadow: "0 0 10px #ef4444", display: "inline-block"
             }} />
-            <span>PHIÊN BẢN CẬP NHẬT THÁNG 7/2026 — TÍCH HỢP AI &amp; KỸ THUẬT MỚI</span>
+            <span>BỘ TEMPLATE VIDEO BẤT ĐỘNG SẢN PRO 2026 — CAPCUT &amp; PREMIERE</span>
           </div>
           <br />
 
@@ -52,7 +52,7 @@ export function HeroSection() {
               </span>
             )}
             <span className="cl-hero__main-span" style={{ textTransform: "none", fontSize: "clamp(28px, 4.2vw, 54px)", lineHeight: 1.15, fontWeight: 500, letterSpacing: "-0.018em" }}>
-              <ScrollTypewriter text={c.heroHeadline2 || ""} highlightText="mượt đến vô lý" speed={5} />
+              <ScrollTypewriter text={c.heroHeadline2 || ""} highlightText="triệu view" speed={5} />
             </span>
           </h1>
 
@@ -108,7 +108,7 @@ export function HeroSection() {
           <div className="cl-hero__cta-wrap">
             <CtaButton label={`${c.heroCta} — ${c.price} VNĐ`} />
             <p className="cl-hero__sub-price">
-              {c.heroSubPrice ?? `Giá gốc: ${c.value} VNĐ — Tiết kiệm 80% hôm nay`}
+              {c.heroSubPrice ?? `Giá gốc: ${c.value} VNĐ — Tiết kiệm 85% hôm nay`}
             </p>
           </div>
         </div>
@@ -128,7 +128,7 @@ export function HeroSection() {
         }} />
         <FadeIn>
           <div className="cl-label">
-            <span style={{ opacity: 0.4 }}>// </span>Triết lý quay dựng
+            <span style={{ opacity: 0.4 }}>// </span>Triết lý video BĐS
           </div>
           <h2 className="cl-sh" style={{ fontFamily: t.fontDisplay }}>
             <ScrollTypewriter text={c.heroAccentLine} speed={7} />
@@ -153,11 +153,11 @@ export function HeroSection() {
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                 <span style={{ fontSize: 20 }}>🎬</span>
                 <span style={{ fontFamily: t.fontMono, fontSize: 12, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--cl-accent)", fontWeight: 500 }}>
-                  TRỤ CỘT 1: QUAY DỰNG CUỐN HÚT
+                  TRỤ CỘT 1: THỊ GIÁC SANG TRỌNG
                 </span>
               </div>
               <h3 style={{ fontFamily: t.fontBody, fontSize: "clamp(19px, 5vw, 24px)", fontWeight: 500, color: "#fff", margin: "4px 0 0", letterSpacing: "-0.015em" }}>
-                Cắt Ghép Chỉn Chu
+                {c.products?.[0]?.name ?? "Text Animation & SFX Pro"}
               </h3>
               <p style={{ fontSize: "clamp(15px, 3.8vw, 18px)", lineHeight: 1.75, color: "#e2e8f0", margin: 0 }}>
                 {c.products?.[0]?.desc ?? ""}
@@ -173,11 +173,11 @@ export function HeroSection() {
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                 <span style={{ fontSize: 20 }}>💡</span>
                 <span style={{ fontFamily: t.fontMono, fontSize: 12, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--cl-accent)", fontWeight: 500 }}>
-                  TRỤ CỘT 2: NÂNG TẦM THẨM MỸ
+                  TRỤ CỘT 2: KHUNG MẪU DỰNG SẴN
                 </span>
               </div>
               <h3 style={{ fontFamily: t.fontBody, fontSize: "clamp(19px, 5vw, 24px)", fontWeight: 500, color: "#fff", margin: "4px 0 0", letterSpacing: "-0.015em" }}>
-                Dựng Cảnh Có Gu
+                {c.products?.[1]?.name ?? "Template Dựng Sẵn 1-Click"}
               </h3>
               <p style={{ fontSize: "clamp(15px, 3.8vw, 18px)", lineHeight: 1.75, color: "#e2e8f0", margin: 0 }}>
                 {c.products?.[1]?.desc ?? ""}

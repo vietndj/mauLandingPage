@@ -1,4 +1,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap');
 
-/* Reset fonts to use Google Fonts where needed, typically handled in theme.ts now. This just ensures they are loaded. */
+/* SVN-Sonoma Custom Font Family */
+@font-face {
+  font-family: 'SVN-Sonoma';
+  src: url('/fonts/SVN-Sonoma-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SVN-Sonoma';
+  src: url('/fonts/SVN-Sonoma-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SVN-Sonoma';
+  src: url('/fonts/SVN-Sonoma-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SVN-Sonoma';
+  src: url('/fonts/SVN-Sonoma-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SVN-Sonoma';
+  src: url('/fonts/SVN-Sonoma-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SVN-Sonoma';
+  src: url('/fonts/SVN-Sonoma-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SVN-Sonoma';
+  src: url('/fonts/SVN-Sonoma-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SVN-Sonoma';
+  src: url('/fonts/SVN-Sonoma-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SVN-Sonoma';
+  src: url('/fonts/SVN-Sonoma-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+

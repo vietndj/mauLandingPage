@@ -8,41 +8,24 @@ description: >
 
 Bạn là chuyên gia thiết kế và viết nội dung Landing Page. Khi skill này được kích hoạt, hãy thực hiện chính xác các PHASE dưới đây:
 
-## PHASE 1: Thu thập thông tin (Interactive Setup)
+## PHASE 1: Thu thập thông tin (Interactive 2-Turn Demo Setup)
 
-Bạn cần sử dụng tool `ask_question` để hỏi người dùng lần lượt TỪNG CÂU HỎI MỘT. 
+### 🚀 Quy tắc 2 Nhịp Tương tác (Chuẩn Kịch bản Video Demo)
 
-**Q1: Sản phẩm** (bắt buộc)
-"Bạn bán sản phẩm/dịch vụ gì? Mô tả ngắn gọn."
+- **Nhịp 1**: Khi người dùng gõ lệnh tổng quan (VD: *"Tạo landing page bán sản phẩm giá 199k"* hoặc *"Tạo landing page bán hàng"*):
+  ➜ Bạn HÃY HỎI 02 CÂU HỎI NGẮN GỌN:
+  1. *"Sản phẩm/dịch vụ cụ thể bạn muốn bán là gì?"*
+  2. *"Bạn muốn nhận chuyển khoản qua ngân hàng nào? (Ví dụ: TPBank, MB Bank, Techcombank,...)"*
 
-**Q2: Giá bán** (bắt buộc)
-"Giá bán ưu đãi và giá gốc (nếu có)?"
-Ví dụ: "599k / gốc 3.2 triệu"
+- **Nhịp 2**: Khi người dùng trả lời (VD: *"Thư Viện 300 Sound Effects & Nhạc Nền Cinema, ngân hàng TPBank"*):
+  ➜ Tự động bóc tách tên sản phẩm, mức giá (199.000 VNĐ), ngân hàng (TPBank - số tài khoản `88804101986`, tên `NGUYEN DUC VIET` có sẵn trong `site.config.ts`), sau đó CHUYỂN THẲNG sang **PHASE 2** (Sinh nội dung) ➜ **PHASE 3** (Ghi code/cấu hình) ➜ **PHASE 4** (Khởi chạy & Trả link)!
 
-**Q3: Khách hàng mục tiêu** (bắt buộc)
-"Khách hàng mục tiêu của bạn là ai?"
-Ví dụ: "Người làm nội dung, chủ shop online"
+### ⚙️ Cấu hình Mặc định (Default Fallback)
+Nếu người dùng không chỉ định cụ thể số tài khoản hoặc API keys:
+- **Thông tin ngân hàng**: Tự động lấy số tài khoản & tên chủ tài khoản thật có sẵn trong `src/site.config.ts`.
+- **Hệ thống thanh toán & Thông báo (SePay/Telegram/Make/Resend)**: Tự động đọc từ file `.env` hoặc `site.config.ts`.
 
-**Q4: Thông tin ngân hàng** (bắt buộc)
-"Thông tin tài khoản nhận thanh toán:
-- Ngân hàng (VD: MB Bank, TPBank, Vietcombank...)
-- Số tài khoản
-- Tên chủ tài khoản (IN HOA, không dấu)"
-
-**Q5: SePay API Key** (bắt buộc)
-"Để tự động phát hiện thanh toán, bạn cần SePay API Key.
-Xem hướng dẫn chi tiết tại: references/sepay-guide.md
-Nhập SePay API Key của bạn:"
-
-**Q6: Thông báo** (tùy chọn)
-"Bạn muốn nhận thông báo qua đâu khi có đơn hàng?"
-Các tuỳ chọn:
-- Telegram Bot (khuyến nghị)
-- Chỉ xem trên Google Sheet
-- Cả Telegram + Email cho khách
-
-Nếu người dùng chọn Telegram: Hỏi Bot Token và Chat ID (kèm hướng dẫn tạo bot tại references/telegram-guide.md).
-Nếu người dùng chọn Email: Hỏi Resend API Key.
+---
 
 ## PHASE 2: Sinh nội dung bằng AI (Content Generation)
 
@@ -64,8 +47,7 @@ Sau khi thu thập xong thông tin, thực hiện:
    - Tạo final CTA
    - Tạo value stack
    - Tạo 5-7 FAQ items
-3. Hiển thị tóm tắt nội dung đã sinh cho người dùng và hỏi: "Nội dung đã ổn chưa? Bạn muốn chỉnh sửa phần nào?"
-4. Lặp lại việc sửa đổi nếu người dùng yêu cầu, nếu đã chốt thì chuyển sang Phase 3.
+3. Tự động chuyển thẳng sang **PHASE 3** và **PHASE 4** để ghi code, build và trả link web live ngay lập tức (dưới 2 phút) mà không làm ngắt nhịp tương tác của người dùng.
 
 ## PHASE 3: Ghi config & Populate template
 
@@ -73,15 +55,9 @@ Thực hiện các bước sau (sử dụng file tool để thay đổi code):
 
 1. **Ghi vào `src/site.config.ts`**: Điền thông tin thanh toán/thông báo thu được ở Phase 1.
 2. **Cập nhật `src/content.ts`**: Thay thế object `DEFAULT_CONTENT` bằng nội dung đã sinh ở Phase 2. Giữ nguyên interface `PageContent` và hàm `ContentProvider`, CHỈ chỉnh sửa các giá trị bên trong `DEFAULT_CONTENT`.
-3. **Tạo file `.env`** với nội dung sau:
-   ```
-   COURSE_AMOUNT=<giá bán dạng số, VD: 599000>
-   SEPAY_API_KEY=<từ người dùng>
-   GOOGLE_SCRIPT_URL=<từ người dùng hoặc rỗng>
-   TELEGRAM_BOT_TOKEN=<từ người dùng hoặc rỗng>
-   TELEGRAM_CHAT_ID=<từ người dùng hoặc rỗng>
-   RESEND_API_KEY=<từ người dùng hoặc rỗng>
-   ```
+3. **Cập nhật file `.env`**:
+   - Nếu file `.env` đã có sẵn: Giữ nguyên các API Keys (`SEPAY_API_KEY`, `GOOGLE_SCRIPT_URL`, `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, `RESEND_API_KEY`, `MAKE_WEBHOOK_URL`...) và chỉ cập nhật `COURSE_AMOUNT=<giá bán dạng số, VD: 299000>`.
+   - Nếu chưa có: Tạo mới `.env` dựa trên `.env.example`.
 4. Chạy lệnh: `npm install` để cài đặt dependencies.
 5. Chạy lệnh: `npm run build` để xác nhận dự án biên dịch thành công.
 

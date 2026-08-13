@@ -5,32 +5,33 @@
 export const siteConfig = {
   // === THÔNG TIN SẢN PHẨM ===
   product: {
-    name: "{{TÊN_SẢN_PHẨM}}",
-    price: "0",           // Giá bán ưu đãi (format: "599.000")
-    originalPrice: "0",   // Giá gốc (format: "3.250.000")
+    name: "Bộ Template Video Bất Động Sản Pro",
+    price: "149.000",           // Giá bán ưu đãi (format: "149.000")
+    originalPrice: "990.000",   // Giá gốc (format: "990.000")
   },
   // === THANH TOÁN ===
   payment: {
-    bankCode: "MB",           // Mã ngân hàng VietQR (MB, TPB, VCB, TCB, ACB...)
-    accountNumber: "",         // Số tài khoản
-    accountName: "",           // Tên chủ tài khoản (IN HOA, không dấu)
-    transferPrefix: "ORDER",   // Tiền tố nội dung CK
+    bankCode: "TPB",           // Mã ngân hàng VietQR (MB, TPB, VCB, TCB, ACB...)
+    accountNumber: "88804101986", // Số tài khoản thật
+    accountName: "NGUYEN DUC VIET", // Tên chủ tài khoản (IN HOA, không dấu)
+    transferPrefix: "BDS149K",   // Tiền tố nội dung CK
   },
   // === THÔNG BÁO ===
   notifications: {
     telegramBotToken: "",     // Token bot Telegram
     telegramChatId: "",       // Chat ID nhận thông báo
     resendApiKey: "",         // API key Resend.com (tùy chọn)
-    sellerEmail: "",          // Email người bán nhận thông báo
+    sellerEmail: "vietndj@gmail.com", // Email người bán nhận thông báo
     buyerEmailTemplate: {
-      subject: "🎉 Đơn hàng thành công!",
-      productLink: "",        // Link sản phẩm/khóa học gửi cho khách
+      subject: "🎉 Đơn hàng Bộ Template Video BĐS Pro thành công!",
+      productLink: "",        // Link sản phẩm gửi cho khách
     },
   },
   // === BRANDING ===
   branding: {
-    siteName: "",
-    footerBrand: "",
-    footerCopyright: "",
+    siteName: "BĐS Video Pro",
+    footerBrand: "BĐS VIDEO PRO",
+    footerCopyright: "© 2026 BĐS Video Pro. All rights reserved.",
   },
 };
+
