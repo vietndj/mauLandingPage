@@ -3,15 +3,33 @@ import { useContent } from "../content";
 import { useTheme } from "../theme";
 import { FadeIn, Label, SH, Sec } from "../components/ui";
 
+const DEFAULT_AVATAR = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=80";
+
 export function InstructorSection() {
   const c = useContent();
   const t = useTheme();
+
+  const photo = c.instructorPhoto && c.instructorPhoto.startsWith("http")
+    ? c.instructorPhoto
+    : DEFAULT_AVATAR;
+
+  const badge1 = (c as any).instructorBadge1 || "Chuyên gia giàu kinh nghiệm";
+  const badge2 = (c as any).instructorBadge2 || "✨ Cam kết đồng hành & hỗ trợ 1-1";
+  const subtitle = (c as any).instructorSubtitle || c.instructorTitle || "ĐỘI NGŨ CHUYÊN GIA DÀNH NHIỀU NĂM NGHIÊN CỨU & ĐÓNG GÓI SẢN PHẨM THỰC CHIẾN.";
+
+  const bioList = (c.instructorBio && c.instructorBio.length > 0)
+    ? c.instructorBio
+    : [
+        "Chúng tôi hiểu rào cản lớn nhất của bạn không phải là thiếu thiết bị xịn hay công cụ phức tạp, mà là bị quá tải bởi những lý thuyết rườm rà.",
+        "Sản phẩm này được đóng gói tối giản nhất — không có định nghĩa hàn lâm. Chỉ có những quy luật trực quan nhất để bạn áp dụng và ra kết quả ngay lập tức."
+      ];
+
   return (
     <Sec maxWidth={860}>
       <FadeIn>
         <div style={{ textAlign: "center", marginBottom: 48 }}>
-          <Label>{c.instructorLabel}</Label>
-          <SH typed>{c.instructorHeading}</SH>
+          <Label>{c.instructorLabel || "TÁC GIẢ & ĐỘI NGŨ PHÁT TRIỂN"}</Label>
+          <SH typed>{c.instructorHeading || "Được Đóng Gói Bởi Đội Ngũ Chuyên Gia"}</SH>
         </div>
       </FadeIn>
       <FadeIn delay={100}>
@@ -24,11 +42,20 @@ export function InstructorSection() {
             <div style={{
               borderRadius: 16, overflow: "hidden", border: `2px solid ${t.accent}44`,
               boxShadow: `0 0 40px -12px ${t.accent}55`, marginBottom: 16,
+              aspectRatio: "1 / 1", background: t.card2
             }}>
-              <img src={c.instructorPhoto ?? "/instructor.jpg"} loading="lazy" alt={c.instructorName} style={{ width: "100%", display: "block" }} />
+              <img
+                src={photo}
+                loading="lazy"
+                alt={c.instructorName || "Avatar"}
+                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = DEFAULT_AVATAR;
+                }}
+              />
             </div>
-            <div style={{ fontFamily: t.fontDisplay, fontSize: 22, fontWeight: 500, lineHeight: 1.15, letterSpacing: "-0.018em", color: "#fff", marginBottom: 6 }}>
-              {c.instructorName}
+            <div style={{ fontFamily: t.fontDisplay, fontSize: 22, fontWeight: 500, lineHeight: 1.15, letterSpacing: "-0.018em", color: "#fff", marginBottom: 8 }}>
+              {c.instructorName || "Chuyên Gia Thực Chiến"}
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 6, alignItems: "center" }}>
               <div style={{
@@ -36,43 +63,36 @@ export function InstructorSection() {
                 borderRadius: 40, padding: "5px 14px", fontSize: 13, color: "var(--cl-accent)",
                 fontWeight: 500, letterSpacing: "0.03em",
               }}>
-                15 năm giảng dạy
+                {badge1}
               </div>
               <div style={{
                 display: "inline-block", background: "rgba(16, 185, 129, 0.12)", border: "1px solid rgba(16, 185, 129, 0.4)",
                 borderRadius: 40, padding: "5px 14px", fontSize: 12, color: "#10b981",
                 fontWeight: 600, letterSpacing: "0.03em",
               }}>
-                ✨ Tác giả Bản Cập nhật Tháng 7/2026
+                {badge2}
               </div>
             </div>
           </div>
 
           <div style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", gap: 0 }}>
             <p style={{ fontSize: 13, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--cl-text-muted, #666)", fontFamily: "monospace", marginBottom: 24, lineHeight: 1.8 }}>
-              KỸ SƯ CÔNG NGHỆ PHẦN MỀM (ĐH BÁCH KHOA). 15 NĂM GIẢNG VIÊN MỸ THUẬT ĐA PHƯƠNG TIỆN TẠI FPT ARENA.
+              {subtitle}
             </p>
             
             <div style={{ height: 1, background: "var(--cl-line)", marginBottom: 24 }} />
             
-            <div style={{ marginBottom: 24 }}>
-              <p style={{ fontSize: 17, lineHeight: 1.7, color: "#94a3b8", fontWeight: 400, margin: "0 0 16px 0" }}>
-                Rào cản lớn nhất của người mới không phải là thiếu thiết bị xịn.
-              </p>
-              <p style={{ fontSize: 17, lineHeight: 1.7, color: "#fff", fontWeight: 500, margin: 0 }}>
-                Mà là bị quá tải bởi những lý thuyết dựng phim rườm rà.
-              </p>
-            </div>
-
-            <div style={{ height: 1, background: "var(--cl-line)", marginBottom: 24 }} />
-
-            <div style={{ marginBottom: 0 }}>
-              <p style={{ fontSize: 17, lineHeight: 1.7, color: "#94a3b8", fontWeight: 400, margin: "0 0 16px 0" }}>
-                Khóa học này không có định nghĩa hàn lâm.
-              </p>
-              <p style={{ fontSize: 17, lineHeight: 1.7, color: "#fff", fontWeight: 500, margin: 0 }}>
-                Chỉ có những quy luật trực quan nhất — để bạn cầm máy lên là quay được ngay.
-              </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+              {bioList.map((paragraph, idx) => (
+                <p key={idx} style={{
+                  fontSize: 17, lineHeight: 1.75,
+                  color: idx % 2 === 0 ? "#94a3b8" : "#ffffff",
+                  fontWeight: idx % 2 === 0 ? 400 : 500,
+                  margin: 0
+                }}>
+                  {paragraph}
+                </p>
+              ))}
             </div>
           </div>
         </div>

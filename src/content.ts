@@ -111,6 +111,9 @@ export interface PageContent {
   instructorBio: string[];
   instructorInsight?: string;
   instructorPhoto?: string;
+  instructorBadge1?: string;
+  instructorBadge2?: string;
+  instructorSubtitle?: string;
 
   urgencyBar: string;
   ctaLabel: string;
@@ -298,14 +301,18 @@ export const DEFAULT_CONTENT: PageContent = {
     { n: "03", title: "Import & Dựng Video", sub: "Mở CapCut hoặc Premiere, kéo thả template vào video của bạn và xuất bản!" }
   ],
 
-  instructorLabel: "TÁC GIẢ BỘ TEMPLATE",
-  instructorHeading: "Được đóng gói bởi Chuyên gia Kỹ xảo & Video Marketing BĐS",
-  instructorInitials: "BV",
-  instructorName: "BĐS Video Pro Team",
-  instructorTitle: "Hơn 8 năm kinh nghiệm sản xuất Video Marketing Bất Động Sản",
+  instructorLabel: "TÁC GIẢ & ĐỘI NGŨ PHÁT TRIỂN",
+  instructorHeading: "Được đóng gói bởi Chuyên gia & Đội ngũ thực chiến",
+  instructorInitials: "PRO",
+  instructorName: "Chuyên Gia Thực Chiến",
+  instructorTitle: "Đội ngũ nghiên cứu & phát triển giải pháp tối ưu cho người dùng",
+  instructorPhoto: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=80",
+  instructorBadge1: "Chuyên gia giàu kinh nghiệm",
+  instructorBadge2: "✨ Cam kết đồng hành & hỗ trợ 1-1",
+  instructorSubtitle: "ĐỘI NGŨ CHUYÊN GIA DÀNH NHIỀU NĂM NGHIÊN CỨU & ĐÓNG GÓI SẢN PHẨM THỰC CHIẾN.",
   instructorBio: [
-    "Chúng tôi đã sản xuất và hỗ trợ hơn 1.500+ Môi giới & Đơn vị truyền thông BĐS tạo ra những video review nhà đất triệu view.",
-    "Bộ Template BĐS Pro được tổng hợp từ những hiệu ứng thực chiến hiệu quả nhất, giúp bạn rút ngắn thời gian và tối đa hóa doanh số bán hàng."
+    "Chúng tôi hiểu rào cản lớn nhất của bạn không phải là thiếu thiết bị xịn hay công cụ phức tạp, mà là bị quá tải bởi những lý thuyết rườm rà.",
+    "Sản phẩm này được đóng gói tối giản nhất — không có định nghĩa hàn lâm. Chỉ có những quy luật trực quan nhất để bạn áp dụng và ra kết quả ngay lập tức."
   ],
 
   bonusLabel: "QUÀ TẶNG KÈM ĐẶC BIỆT",
