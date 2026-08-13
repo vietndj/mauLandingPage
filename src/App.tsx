@@ -7,8 +7,7 @@ import { PainSection } from "./sections/PainSection";
 import { AttentionSection } from "./sections/AttentionSection";
 import { RuleSection } from "./sections/RuleSection";
 import { CycleSection } from "./sections/CycleSection";
-import { DiscoverySection, SolutionsSection } from "./sections/DiscoverySection";
-import { SolutionSection } from "./sections/DiscoverySection";
+import { DiscoverySection, SolutionSection } from "./sections/DiscoverySection";
 import { SkillsSection } from "./sections/SkillsSection";
 import { MidCtaSection } from "./sections/MidCtaSection";
 import { BeforeAfterSection } from "./sections/BeforeAfterSection";
@@ -44,9 +43,6 @@ export default function App() {
       <Div />
 
       {!isHidden("discovery") && <DiscoverySection />}
-      <Div />
-
-      {!isHidden("solutions") && <SolutionsSection />}
       <Div />
 
       {!isHidden("solution") && <SolutionSection />}
