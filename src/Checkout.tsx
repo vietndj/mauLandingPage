@@ -662,16 +662,29 @@ function CheckoutContent() {
           }}
           onClick={(e) => e.stopPropagation()}
           >
-            <iframe 
-              width="100%" 
-              height="100%" 
-              src="https://www.youtube.com/embed/CaDZiACYrV8?autoplay=1" 
-              title="YouTube video player" 
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              allowFullScreen
-              style={{ border: "none" }}
-            />
+            {((c as any).checkoutVideoUrl || c.heroVideoYoutubeId) ? (
+              <iframe 
+                width="100%" 
+                height="100%" 
+                src={`https://www.youtube.com/embed/${(c as any).checkoutVideoUrl || c.heroVideoYoutubeId}?autoplay=1`} 
+                title="YouTube video player" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowFullScreen
+                style={{ border: "none" }}
+              />
+            ) : (
+              <div style={{
+                width: "100%", height: "100%", background: "#0b101a", border: `2px dashed ${t.accent}`,
+                display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: 24, textAlign: "center"
+              }}>
+                <div style={{ fontSize: 40, marginBottom: 12 }}>🎬</div>
+                <div style={{ fontFamily: t.fontMono, fontSize: 14, fontWeight: 600, color: t.accent, textTransform: "uppercase", marginBottom: 8 }}>
+                  NHẬP LINK VIDEO DEMO IN CONTENT.TS
+                </div>
+                <p style={{ fontSize: 13, color: "#888", margin: 0 }}>Thêm <code style={{ color: "#fff" }}>heroVideoYoutubeId</code> hoặc <code style={{ color: "#fff" }}>checkoutVideoUrl</code> trong <code style={{ color: "#fff" }}>content.ts</code></p>
+              </div>
+            )}
             <button 
               onClick={() => setShowVideoModal(false)}
               style={{

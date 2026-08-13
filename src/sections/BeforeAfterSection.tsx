@@ -18,7 +18,42 @@ export function BeforeAfterSection() {
       <FadeIn delay={100}>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 40 }}>
           <div style={{ maxWidth: 420, width: "100%", margin: "32px auto", borderRadius: 32, overflow: "hidden", border: `2px solid ${t.accent}44`, boxShadow: `0 0 30px -10px ${t.accent}44` }}>
-            <AppYTEmbed url="https://youtube.com/shorts/0R4N2-z2tDI?feature=share" />
+            {c.baVideoUrl ? (
+              <AppYTEmbed url={c.baVideoUrl} />
+            ) : (
+              <div style={{
+                aspectRatio: "9 / 16",
+                background: "rgba(0, 0, 0, 0.5)",
+                border: `2px dashed ${t.accent}`,
+                borderRadius: 30,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "36px 20px",
+                textAlign: "center"
+              }}>
+                <div style={{
+                  width: 60, height: 60, borderRadius: "50%",
+                  background: `${t.accent}18`,
+                  border: `1px solid ${t.accent}44`,
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  marginBottom: 16
+                }}>
+                  <span style={{ fontSize: 26, color: t.accent, marginLeft: 3 }}>▶</span>
+                </div>
+                <div style={{
+                  fontFamily: t.fontMono, fontSize: 13, fontWeight: 600,
+                  color: t.accent, letterSpacing: "0.08em",
+                  textTransform: "uppercase", marginBottom: 8
+                }}>
+                  🎬 NHẬP LINK VIDEO DEMO
+                </div>
+                <p style={{ fontSize: 13, color: "var(--cl-text-muted, #888)", margin: 0, lineHeight: 1.6, maxWidth: 280 }}>
+                  Thêm link YouTube / Shorts vào <code style={{ color: "#fff", background: "rgba(255,255,255,0.1)", padding: "2px 6px", borderRadius: 4 }}>baVideoUrl</code> trong <code style={{ color: "#fff", background: "rgba(255,255,255,0.1)", padding: "2px 6px", borderRadius: 4 }}>content.ts</code>
+                </p>
+              </div>
+            )}
           </div>
           <div style={{
             display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 32,

@@ -86,6 +86,7 @@ export interface PageContent {
   baLabel: string;
   baHeading: string;
   baSub: string;
+  baVideoUrl?: string;
   baBeforeMedia?: string;
   baAfterMedia?: string;
   beforeLabel: string;
