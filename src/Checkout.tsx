@@ -1,10 +1,10 @@
+import { siteConfig } from './site.config';
 import { useEffect, useState, useCallback } from "react";
 import { useTheme } from "./theme";
 import { useContent } from "./content";
 import LiveSocialProof from "./LiveSocialProof";
 import ZaloChatWidget from "./ZaloChatWidget";
 import { IconCheck } from "./components/ui";
-import { siteConfig } from "./site.config";
 
 function useIsMobile(breakpoint = 680) {
   const [mobile, setMobile] = useState(() => window.innerWidth < breakpoint);
@@ -18,30 +18,26 @@ function useIsMobile(breakpoint = 680) {
 
 const GREEN = "#10b981"; // Emerald green for success states
 
-const LANTAN_FAQS = [
+export const LANTAN_FAQS = [
   {
-    q: "1. \"Tôi dùng CapCut trên điện thoại có dùng được bộ template này không?\"",
-    a: "Hoàn toàn được! Bộ template được đóng gói chuẩn định dạng tương thích 100% với CapCut (iOS & Android) cũng như Premiere Pro, After Effects, DaVinci Resolve trên máy tính PC/Mac. Có video hướng dẫn 1-click apply cực kỳ dễ dàng."
+    q: "1. \"Tôi không giỏi nói chuyện, coaching có giúp được không?\"",
+    a: "Chắc chắn rồi. Coaching tập trung vào việc khơi gợi và lắng nghe. Chuyên gia sẽ hướng dẫn bạn cách diễn đạt tự nhiên nhất, dùng giao tiếp không bạo lực để đối phương hiểu mà bạn không cần phải là một người 'giỏi ăn nói'."
   },
   {
-    q: "2. \"Tôi chưa từng học dựng video bao giờ thì có làm được không?\"",
-    a: "Rất dễ dàng! Bạn không cần biết dùng hiệu ứng phức tạp. Cấu trúc template đã được dựng sẵn khung hình, hiệu ứng chữ và âm thanh. Bạn chỉ cần kéo thả clip quay nhà đất của mình vào là video tự động đẹp như phim."
+    q: "2. \"Vợ/chồng tôi không muốn tham gia thì sao?\"",
+    a: "Chỉ cần một người sẵn sàng thay đổi cũng đủ để phá vỡ vòng xoáy bế tắc. Khi bạn thay đổi cách phản ứng và giao tiếp, đối phương cũng sẽ tự động điều chỉnh theo một cách tích cực."
   },
   {
-    q: "3. \"Sau khi chuyển khoản 149.000đ thì tôi nhận tài nguyên bằng cách nào?\"",
-    a: "Hệ thống thanh toán vận hành tự động 24/7. Ngay khi bạn quét mã VietQR thành công, link tải Google Drive trọn bộ template tốc độ cao kèm video hướng dẫn sẽ được gửi ngay lập tức qua Zalo và Email của bạn trong vòng 1 phút."
+    q: "3. \"8 tuần có đủ để thay đổi không?\"",
+    a: "Nghiên cứu khoa học tâm lý chỉ ra rằng cần trung bình 66 ngày để hình thành một thói quen mới. 8 tuần là khoảng thời gian lý tưởng để thiết lập nền tảng, 2 buổi follow-up tặng kèm sau đó sẽ giúp bạn duy trì kết quả bền vững."
   },
   {
-    q: "4. \"Bộ template có được cập nhật thêm các mẫu mới sau này không?\"",
-    a: "Có! Bạn mua 1 lần sở hữu VĨNH VIỄN và được truy cập link cập nhật các mẫu Text Animation & Sound Effects mới hoàn toàn miễn phí trong tương lai."
+    q: "4. \"Coaching khác gì tư vấn tâm lý?\"",
+    a: "Tư vấn tâm lý thường tập trung vào phân tích quá khứ và chẩn đoán. Coaching hướng tới giải pháp (Solution-focused), giúp bạn nhận diện vấn đề hiện tại và xây dựng các bước hành động cụ thể để đạt được kết quả."
   },
   {
-    q: "5. \"Nhạc nền và hiệu ứng âm thanh có bị bản quyền trên TikTok/Facebook Reels không?\"",
-    a: "Toàn bộ 50+ bản nhạc nền Cinematic và 200+ SFX đã được kiểm duyệt kỹ lưỡng, đảm bảo Clean 100% không bị đánh gậy bản quyền hay bóp tương tác khi chạy quảng cáo."
-  },
-  {
-    q: "6. \"Nếu tôi gặp rắc rối khi tải hoặc chèn template thì hỗ trợ ra sao?\"",
-    a: "Đội ngũ kỹ thuật hỗ trợ 1-1 trực tiếp qua Zalo. Chúng tôi cam kết đồng hành cùng bạn cho đến khi xuất bản thành công video BĐS đầu tiên!"
+    q: "5. \"Ngoài 1.990.000 này, có phát sinh chi phí gì thêm không?\"",
+    a: "Không. Đây là chi phí trọn gói cho lộ trình 8 tuần cùng tất cả các quà tặng và công cụ kèm theo. Mọi thông tin tài chính luôn được chúng tôi minh bạch ngay từ đầu."
   }
 ];
 
@@ -137,7 +133,7 @@ function Lbl({ children }: { children: React.ReactNode }) {
 function H({ children }: { children: React.ReactNode }) {
   const t = useTheme();
   return (
-    <h2 style={{ fontFamily: t.fontDisplay, fontSize: "clamp(18px, 3vw, 24px)", fontWeight: 500, lineHeight: 1.15, letterSpacing: "-0.018em", margin: "0 0 18px", color: t.textBase ?? "#fff" }}>
+    <h2 className="cl-sh" style={{ fontSize: "clamp(24px, 4vw, 36px)" }}>
       {children}
     </h2>
   );
@@ -171,7 +167,7 @@ function PaymentSuccessModal({ onClose }: { onClose: () => void }) {
             <IconCheck accent={t.accent} />
           </div>
         </div>
-        <h2 style={{ fontFamily: t.fontDisplay, fontSize: "clamp(22px,4vw,30px)", fontWeight: 500, lineHeight: 1.15, letterSpacing: "-0.018em", color: t.textBase ?? "#fff", margin: "0 0 12px" }}>
+        <h2 className="cl-sh" style={{ fontSize: "clamp(24px, 4vw, 36px)" }}>
           Thanh toán thành công!
         </h2>
         <p style={{ fontSize: 15, color: t.textBody ?? "#aaa", lineHeight: 1.75, margin: "0 0 24px" }}>
@@ -183,7 +179,7 @@ function PaymentSuccessModal({ onClose }: { onClose: () => void }) {
           <p style={{ fontSize: 13, color: t.textMuted ?? "#555" }}>Vui lòng kiểm tra hộp thư (kể cả Spam) sau vài phút nhé!</p>
         </div>
         <div style={{ background: t.card2, borderRadius: Math.max(8, t.cardRadius - 4), padding: "14px 20px", marginBottom: 24 }}>
-          {["🎬 Khóa học Tư Duy Làm Video Điện Thoại: Quay Là Cuốn", `🎁 ${c.valueStack.length > 1 ? c.valueStack[1].label : "Quà Tặng Độc Quyền"}`, "♾ Sở hữu vĩnh viễn"].map((item) => (
+          {["🎬 Gói Bàn Giao 3 Trợ Lý AI Cho Video", "🎁 Trọn bộ 3 công cụ tự động hóa & web bán hàng", "♾ Hỗ trợ Zalo 1-1 & Sở hữu vĩnh viễn"].map((item) => (
             <div key={item} style={{ fontSize: 15, color: t.textBody ?? "#b0b0b0", padding: "4px 0", textAlign: "left" }}>{item}</div>
           ))}
         </div>
@@ -213,14 +209,14 @@ function ConfirmBanner({ onReset }: { onReset: () => void }) {
         }}>
           <IconCheck accent={t.accent} />
         </div>
-      <h2 style={{ fontFamily: t.fontDisplay, fontSize: "clamp(22px, 4vw, 28px)", fontWeight: 500, lineHeight: 1.15, letterSpacing: "-0.018em", marginBottom: 12, color: t.textBase ?? "#fff" }}>
+      <h2 className="cl-sh" style={{ fontSize: "clamp(24px, 4vw, 36px)" }}>
         Cảm ơn bạn đã chuyển khoản!
       </h2>
       <p style={{ fontSize: 15, color: t.textBody ?? "#aaa", lineHeight: 1.75, maxWidth: 460, margin: "0 auto 24px" }}>
-        Chúng tôi đang xác minh giao dịch. Bạn sẽ nhận được tài liệu qua email <strong style={{ color: "#fff" }}>trong vòng 30 phút</strong> (giờ hành chính).
+        Chúng tôi đang xác minh giao dịch. Bạn sẽ nhận được tài liệu qua email <strong style={{ color: "var(--cl-text-base, #111827)" }}>trong vòng 30 phút</strong> (giờ hành chính).
       </p>
       <div style={{ display: "inline-flex", flexDirection: "column", gap: 10, background: t.card, border: `1px solid ${t.line}`, borderRadius: Math.max(8, t.cardRadius - 4), padding: "20px 24px", marginBottom: 20, textAlign: "left" }}>
-        {["🎬 Khóa học Tư Duy Làm Video Điện Thoại: Quay Là Cuốn", `🎁 ${c.valueStack.length > 1 ? c.valueStack[1].label : "Quà Tặng Độc Quyền"}`, "♾ Sở hữu vĩnh viễn"].map((item) => (
+        {["🎬 Gói Bàn Giao 3 Trợ Lý AI Cho Video", "🎁 Trọn bộ 3 công cụ tự động hóa & web bán hàng", "♾ Hỗ trợ Zalo 1-1 & Sở hữu vĩnh viễn"].map((item) => (
           <span key={item} style={{ fontSize: 15, color: t.textBody ?? "#c0c0c0" }}>{item}</span>
         ))}
       </div>
@@ -241,7 +237,7 @@ function PaymentPanel({ bank, qrUrl, onConfirm, onVideoClick }: { bank: BankInfo
   const originalVal = parseInt(c.value.replace(/\./g, ""), 10);
   const savingVal = originalVal - priceVal;
   const formattedSaving = new Intl.NumberFormat("vi-VN").format(savingVal);
-  const prefix = siteConfig.payment.transferPrefix || "ORDER";
+  const prefix = (c as any).transferPrefix || siteConfig.product.transferPrefix;
 
   return (
     <Card highlight style={{ padding: "24px 20px" }}>
@@ -262,7 +258,7 @@ function PaymentPanel({ bank, qrUrl, onConfirm, onVideoClick }: { bank: BankInfo
         <div style={{ fontSize: 12.5, fontWeight: 700, color: "#10b981", letterSpacing: "0.03em", textTransform: "uppercase" }}>
           ✨ PHIÊN BẢN CHÍNH THỨC CẬP NHẬT THÁNG 7/2026
         </div>
-        <div style={{ fontSize: 12, color: "#cbd5e1", marginTop: 3 }}>
+        <div style={{ fontSize: 12, color: "var(--cl-text-body, #374151)", marginTop: 3 }}>
           Bảo chứng chính chủ &amp; Hỗ trợ trực tiếp từ NGUYỄN ĐỨC VIỆT
         </div>
       </div>
@@ -290,20 +286,20 @@ function PaymentPanel({ bank, qrUrl, onConfirm, onVideoClick }: { bank: BankInfo
           {c.bonusItems.slice(0, 2).map((bonus, idx) => (
             <div key={idx} style={{ display: "flex", gap: 8, alignItems: "flex-start" }}>
               <span style={{ color: "#f97316", fontSize: 15, lineHeight: 1.2 }}>✓</span>
-              <p style={{ fontSize: 13, color: "#fff", margin: 0, lineHeight: 1.4, fontWeight: 600 }}>
+              <p style={{ fontSize: 13, color: "var(--cl-text-base, #111827)", margin: 0, lineHeight: 1.4, fontWeight: 600 }}>
                 {bonus.title}
               </p>
             </div>
           ))}
         </div>
         <div style={{ borderTop: "1px dashed rgba(249, 115, 22, 0.2)", paddingTop: 10, textAlign: "center" }}>
-          <p style={{ fontSize: 12.5, color: "#e2e8f0", margin: "0 0 8px", fontWeight: 500 }}>
+          <p style={{ fontSize: 12.5, color: "var(--cl-text-body, #374151)", margin: "0 0 8px", fontWeight: 500 }}>
             Quà tặng sẽ tự động hủy sau:
           </p>
           <Countdown hideLabel />
         </div>
       </div>
-      {/* 🎁 [Khối Early Bird FOMO] */}
+      {/* 🎁 [Khối Hỗ trợ trực tiếp từ giảng viên] */}
       <div style={{
         background: "rgba(249, 115, 22, 0.08)",
         border: "1px solid #f97316",
@@ -313,14 +309,14 @@ function PaymentPanel({ bank, qrUrl, onConfirm, onVideoClick }: { bank: BankInfo
         textAlign: "left",
         boxShadow: "0 0 30px rgba(249, 115, 22, 0.2)"
       }}>
-        <div style={{ fontSize: 14, fontWeight: 500, color: "#f97316", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 12, textAlign: "center" }}>
-          🎁 HỖ TRỢ TRỰC TIẾP TỪ GIẢNG VIÊN (CHỈ CÒN 9 BẠN)
+        <div style={{ fontSize: 14, fontWeight: 600, color: "#f97316", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 10, textAlign: "center" }}>
+          🎁 HỖ TRỢ TRỰC TIẾP TỪ GIẢNG VIÊN
         </div>
-        <p style={{ fontSize: 13, color: "#fff", margin: "0 0 10px", lineHeight: 1.5, fontWeight: 500 }}>
-          Đợt này web mới ra mắt nên mình đặc biệt <strong>hỗ trợ Zalo 1-1</strong> cho anh em. Đăng ký xong cứ add Zalo mình, kẹt chỗ nào mình gỡ chỗ đó.
+        <p style={{ fontSize: 13, color: "var(--cl-text-base, #111827)", margin: "0 0 8px", lineHeight: 1.5, fontWeight: 500 }}>
+          Sau khi đăng ký, bạn cứ kết nối Zalo trực tiếp với mình. Kẹt chỗ nào trong quá trình thực hành hay triển khai công cụ, mình hỗ trợ gỡ rối ngay chỗ đó.
         </p>
         <p style={{ fontSize: 12, color: "#f97316", margin: 0, lineHeight: 1.5, fontStyle: "italic" }}>
-          (Mình còn phải đứng lớp trên trường nên quỹ thời gian có hạn, đợt này chỉ dám nhận hỗ trợ 1-1 thêm đúng 9 bạn nữa cho chu đáo. Anh em tranh thủ nhé, thông tin Zalo có trong email kích hoạt!)
+          (Thông tin Zalo cá nhân của mình được gửi kèm trong email kích hoạt ngay sau khi thanh toán!)
         </p>
       </div>
       {/* 📱 [Khối Mã QR & Thanh Toán] (Ở giữa, to nhất) */}
@@ -375,7 +371,7 @@ function PaymentPanel({ bank, qrUrl, onConfirm, onVideoClick }: { bank: BankInfo
         <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
           <span style={{ background: t.accent, color: t.accentText, fontSize: 12, fontWeight: 500, borderRadius: "50%", width: 22, height: 22, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>2</span>
           <span style={{ fontSize: 15, color: t.textBody ?? "#b0b0b0" }}>
-            Nhập nội dung: <strong style={{ color: "#fff" }}>{prefix} + [Số điện thoại của bạn]</strong>
+            Nhập nội dung: <strong style={{ color: "var(--cl-text-base, #111827)" }}>{prefix} + [Số điện thoại của bạn]</strong>
           </span>
         </div>
       </div>
@@ -525,7 +521,7 @@ function GuaranteeBox() {
       <div style={{ background: t.card2, border: `1px solid ${t.accent}33`, borderRadius: Math.max(8, t.cardRadius - 4), padding: "16px 18px" }}>
         <p style={{ fontSize: 15, fontWeight: 500, color: t.accent, marginBottom: 8 }}>🛡️ Đồng hành & Gỡ rối 1-1 cùng giảng viên</p>
         <p style={{ fontSize: 15, color: t.textBody ?? "#666", lineHeight: 1.65, margin: 0 }}>
-          Bất kể bạn gặp khó khăn ở bước nào — từ setup góc máy, hướng đặt đèn, tối ưu thiết bị âm thanh đến lên kịch bản — hãy nhắn cho mình để nhận ngay lịch gọi Zoom trực tiếp gỡ rối và tối ưu hóa 1-1.
+          Bất kể bạn gặp khó khăn ở bước nào — từ bóc kịch bản clip hay, cài đặt trợ lý dựng video tự động đến vận hành trang web bán hàng — hãy nhắn cho mình để nhận ngay lịch gọi Zoom trực tiếp gỡ rối và hỗ trợ 1-1.
         </p>
       </div>
     </div>
@@ -546,31 +542,81 @@ function CheckoutContent() {
   const [showVideoModal, setShowVideoModal] = useState(false);
   const isMobile = useIsMobile();
 
+  // ── GUARD: Chặn cứng khách chưa điền form ──
   const rawCustomer = localStorage.getItem("video_customer");
-  const customer = rawCustomer ? JSON.parse(rawCustomer) as { phone?: string } : {};
-  const phone = customer.phone || "[SĐT CỦA BẠN]";
-  const prefix = siteConfig.payment.transferPrefix || "ORDER";
+  const customer = rawCustomer ? JSON.parse(rawCustomer) as { name?: string; phone?: string; email?: string } : null;
+
+  useEffect(() => {
+    if (!customer || !customer.name || !customer.email || !customer.phone) {
+      window.location.href = "/";
+    }
+  }, []);
+
+  // Nếu chưa có data, render loading rồi redirect
+  if (!customer || !customer.name || !customer.email || !customer.phone) {
+    return (
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", minHeight: "100vh", background: t.bg, color: t.textMuted ?? "#888", fontFamily: t.fontBody }}>
+        <p>Đang chuyển hướng về trang đăng ký...</p>
+      </div>
+    );
+  }
+
+  const phone = customer.phone;
+  const prefix = (c as any).transferPrefix || siteConfig.product.transferPrefix;
   const transferContent = `${prefix} ${phone}`;
 
-  const BANK: BankInfo = {
-    name: siteConfig.payment.bankCode,
-    account: siteConfig.payment.accountNumber,
-    holder: siteConfig.payment.accountName,
-    amount: c.price,
-    content: transferContent
-  };
-  const QR_URL = `https://img.vietqr.io/image/${siteConfig.payment.bankCode}-${siteConfig.payment.accountNumber}-compact2.png?amount=${c.price.replace(/\./g, "")}&addInfo=${encodeURIComponent(transferContent)}&accountName=${encodeURIComponent(siteConfig.payment.accountName)}`;
+  const BANK: BankInfo = { name: siteConfig.payment.bankName, account: siteConfig.payment.accountNumber, holder: siteConfig.payment.accountName, amount: c.price, content: transferContent };
+  const QR_URL = `https://img.vietqr.io/image/${siteConfig.payment.bankCode}-${BANK.account}-compact2.png?amount=${c.price.replace(/\./g, '')}&addInfo=${encodeURIComponent(transferContent)}&accountName=${encodeURIComponent(BANK.holder)}`;
 
   // Bắn sự kiện InitiateCheckout khi truy cập trang thanh toán
   useEffect(() => {
-    // Facebook Pixel removed - add via siteConfig if needed
+    if (typeof window !== "undefined" && (window as any).fbq) {
+      (window as any).fbq('track', 'InitiateCheckout', {
+        value: priceVal || parseInt(siteConfig.product.price.replace(/\./g, ''), 10),
+        currency: 'VND',
+        content_name: siteConfig.product.name
+      });
+    }
   }, [priceVal]);
 
   const handleManualConfirm = async () => {
+    const raw = localStorage.getItem("video_customer");
+    const cust = raw ? JSON.parse(raw) as { name?: string; phone?: string; email?: string; url?: string } : {};
+    
+    // 1. Chặn khách chưa điền Form
+    if (!cust.phone || !cust.name || !cust.email) {
+      alert("Vui lòng điền thông tin đăng ký trước khi xác nhận chuyển khoản để hệ thống có thông tin gửi tài liệu!");
+      window.location.href = "/";
+      return;
+    }
+
+    // 2. Chặn Spam click liên tục (Cooldown 3 phút)
+    const lastConfirm = sessionStorage.getItem("video_manual_confirm_time");
+    if (lastConfirm && Date.now() - parseInt(lastConfirm) < 3 * 60 * 1000) {
+      alert("Hệ thống đang xử lý yêu cầu trước đó của bạn. Vui lòng chờ 3 phút để hệ thống đối soát giao dịch.");
+      setConfirmed(true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    sessionStorage.setItem("video_manual_confirm_time", Date.now().toString());
+
+    alert("Cảm ơn bạn! Chúng tôi đã ghi nhận yêu cầu và đang kiểm tra giao dịch. Vui lòng chờ hệ thống xác nhận trong vài phút.");
     setConfirmed(true);
+    window.scrollTo({ top: 0, behavior: "smooth" });
 
     // Bắn sự kiện Purchase Meta Pixel khi xác nhận thủ công
-    // Facebook Pixel removed - add via siteConfig if needed
+    try {
+      if (typeof window !== "undefined" && (window as any).fbq) {
+        (window as any).fbq('track', 'Purchase', {
+          value: priceVal || parseInt(siteConfig.product.price.replace(/\./g, ''), 10),
+          currency: 'VND',
+          content_name: siteConfig.product.name
+        });
+      }
+    } catch (e) {
+      console.error("Meta Pixel Error:", e);
+    }
 
     try {
       const raw = localStorage.getItem("video_customer");
@@ -612,7 +658,13 @@ function CheckoutContent() {
           localStorage.removeItem("video_payment_since");
           
           // Bắn sự kiện Purchase Meta Pixel khi tự động kiểm tra thấy thanh toán thành công
-          // Facebook Pixel removed - add via siteConfig if needed
+          if (typeof window !== "undefined" && (window as any).fbq) {
+            (window as any).fbq('track', 'Purchase', {
+              value: priceVal || parseInt(siteConfig.product.price.replace(/\./g, ''), 10),
+              currency: 'VND',
+              content_name: siteConfig.product.name
+            });
+          }
 
           const raw = localStorage.getItem("video_customer");
           const customer = raw ? JSON.parse(raw) as { name?: string; phone?: string; email?: string; url?: string } : {};
@@ -662,29 +714,16 @@ function CheckoutContent() {
           }}
           onClick={(e) => e.stopPropagation()}
           >
-            {((c as any).checkoutVideoUrl || c.heroVideoYoutubeId) ? (
-              <iframe 
-                width="100%" 
-                height="100%" 
-                src={`https://www.youtube.com/embed/${(c as any).checkoutVideoUrl || c.heroVideoYoutubeId}?autoplay=1`} 
-                title="YouTube video player" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowFullScreen
-                style={{ border: "none" }}
-              />
-            ) : (
-              <div style={{
-                width: "100%", height: "100%", background: "#0b101a", border: `2px dashed ${t.accent}`,
-                display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: 24, textAlign: "center"
-              }}>
-                <div style={{ fontSize: 40, marginBottom: 12 }}>🎬</div>
-                <div style={{ fontFamily: t.fontMono, fontSize: 14, fontWeight: 600, color: t.accent, textTransform: "uppercase", marginBottom: 8 }}>
-                  NHẬP LINK VIDEO DEMO IN CONTENT.TS
-                </div>
-                <p style={{ fontSize: 13, color: "#888", margin: 0 }}>Thêm <code style={{ color: "#fff" }}>heroVideoYoutubeId</code> hoặc <code style={{ color: "#fff" }}>checkoutVideoUrl</code> trong <code style={{ color: "#fff" }}>content.ts</code></p>
-              </div>
-            )}
+            <iframe 
+              width="100%" 
+              height="100%" 
+              src="https://www.youtube.com/embed/CaDZiACYrV8?autoplay=1" 
+              title="YouTube video player" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowFullScreen
+              style={{ border: "none" }}
+            />
             <button 
               onClick={() => setShowVideoModal(false)}
               style={{
@@ -714,7 +753,7 @@ function CheckoutContent() {
       {/* ── HEADER ── */}
       <header style={{ borderBottom: `1px solid ${t.line}`, padding: "14px 20px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <div style={{ fontFamily: t.fontDisplay, fontSize: 22, fontWeight: 500 }}>
-          VIDEO<span style={{ color: t.accent }}>.</span>
+          AI CREATOR<span style={{ color: t.accent }}>.</span>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
           <span style={{ fontSize: 18 }}>🔒</span>
@@ -734,14 +773,14 @@ function CheckoutContent() {
         {/* ── DECISION CONFIRMATION ── */}
         <div style={{ textAlign: "center", padding: "40px 0 0" }}>
           <Lbl>Xác nhận quyết định</Lbl>
-          <h1 style={{ fontFamily: t.fontDisplay, fontSize: "clamp(22px, 4.2vw, 38px)", fontWeight: 500, lineHeight: 1.15, letterSpacing: "-0.018em", margin: "0 0 14px", color: t.textBase ?? "#fff" }}>
+          <h1 className="cl-sh">
             Bạn đang hoàn tất đơn hàng<br />
             <em style={{ color: t.accent, fontStyle: "normal", fontWeight: 500 }}>
-              {(c as any).checkoutTitle ? <span dangerouslySetInnerHTML={{ __html: (c as any).checkoutTitle }} /> : <>Tư Duy Làm Video Điện Thoại:<br />Quay Là Cuốn</>}
+              {(c as any).checkoutTitle ? <span dangerouslySetInnerHTML={{ __html: (c as any).checkoutTitle }} /> : <>Gói Bàn Giao 3 Trợ Lý AI Cho Video</>}
             </em>
           </h1>
           <p style={{ fontSize: 15, color: t.textMuted ?? "#888", maxWidth: 520, margin: "0 auto 12px", lineHeight: 1.6 }}>
-            Chỉ còn một bước nữa — chuyển khoản và truy cập ngay toàn bộ khóa học + 5 bài học quà tặng trong hôm nay.
+            Chỉ còn một bước nữa — chuyển khoản và nhận ngay toàn bộ 3 công cụ làm sẵn + video hướng dẫn thực chiến hôm nay.
           </p>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: t.card2, border: `1px solid ${GREEN}33`, borderRadius: 50, padding: "8px 20px" }}>
             <span style={{ color: GREEN, fontSize: 14 }}>✓</span>
@@ -778,8 +817,8 @@ function CheckoutContent() {
               <Lbl>Thông tin đơn hàng</Lbl>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
                 <div>
-                  <div style={{ fontWeight: 500, fontSize: 16, color: t.textBase ?? "#fff" }}>Khóa học Video The Creator</div>
-                  <div style={{ fontSize: 15, color: t.textMuted ?? "#666", marginTop: 4 }}>Tư duy quay dựng video bằng điện thoại</div>
+                  <div style={{ fontWeight: 500, fontSize: 16, color: t.textBase ?? "#fff" }}>Gói Bàn Giao 3 Trợ Lý AI Cho Video</div>
+                  <div style={{ fontSize: 15, color: t.textMuted ?? "#666", marginTop: 4 }}>Bàn giao 3 công cụ làm sẵn + Hướng dẫn 1-1</div>
                 </div>
                 <div style={{ textAlign: "right" }}>
                   <div style={{ fontSize: 15, color: t.accent, fontWeight: 500 }}>Tiết kiệm {formattedSaving} VNĐ</div>
@@ -793,51 +832,52 @@ function CheckoutContent() {
               <Lbl>Bạn nhận được gì ngay hôm nay</Lbl>
               <H>Truy cập ngay sau xác nhận</H>
               {((c as any).checkoutFeatures || [
-                "Khóa học Video The Creator: Tư duy quay dựng video bằng điện thoại",
-                "Quyền sở hữu vĩnh viễn — học mọi lúc, mọi nơi, mọi thiết bị",
-                "Kho 50+ âm thanh điện ảnh (SFX) bốc nhất",
-                "Kho Nhạc Nền \"MasterClass\" Độc Bản (mình tạo bằng AI chuyên dụng nên sử dụng sạch bản quyền nhé)",
-                "Sơ đồ đánh sáng 3 điểm cho phòng nhỏ",
-                "Bộ Prompt AI Kịch Bản & Chia Phân Cảnh (Shot-list)",
-                "Cập nhật miễn phí kỹ thuật Edit Video bằng AI",
+                "Công cụ bóc kịch bản clip hay (Kịch bản phân cảnh 2 cột trong 5 phút)",
+                "Trợ lý Dựng video tự động (Gọt đoạn ngập ngừng, phụ đề chuyển động & cảnh trám)",
+                "Mẫu web bán hàng tự động (QR tự nhận tiền & gửi bài 24/7)",
+                "Quyền truy cập cộng đồng trọn đời & Thầy Nguyễn Đức Việt hỗ trợ 1-1",
               ]).map((item: string, i: number) => <Ck key={i}>{item}</Ck>)}
             </Card>
 
             {/* BONUS STACK */}
             <Card>
-              <Lbl>🎁 5 Bonus đặc biệt</Lbl>
-              <H><em>Trị giá 1.250.000 VNĐ — tặng kèm miễn phí</em></H>
-              {c.bonusItems.map((b, i) => (
-                <div key={i} style={{ display: "flex", gap: 14, marginBottom: 16, alignItems: "flex-start" }}>
-                  <span style={{ fontSize: 24, flexShrink: 0 }}>
-                    {i === 0 ? "🎵" : i === 1 ? "🎹" : i === 2 ? "💡" : i === 3 ? "🎬" : "📋"}
-                  </span>
-                  <div>
-                    <div style={{ fontWeight: 500, fontSize: 15, marginBottom: 4 }}>BONUS {i + 1}: {b.title}</div>
-                    <div style={{ fontSize: 15, color: t.textMuted ?? "#555" }}>Trị giá: <s>250.000 VNĐ</s> — <span style={{ color: GREEN }}>Tặng miễn phí</span></div>
+              <Lbl>🎁 Trọn Bộ Công Cụ & Quà Tặng Bàn Giao</Lbl>
+              <H><em>Trị giá 12.990.000 VNĐ — Bàn giao trọn gói</em></H>
+              {c.bonusItems.map((b, i) => {
+                const bonusPrices = ["2.500.000", "3.990.000", "4.500.000", "2.000.000"];
+                const bonusPrice = bonusPrices[i] || "2.000.000";
+                return (
+                  <div key={i} style={{ display: "flex", gap: 14, marginBottom: 16, alignItems: "flex-start" }}>
+                    <span style={{ fontSize: 24, flexShrink: 0 }}>
+                      {i === 0 ? "📝" : i === 1 ? "🎬" : i === 2 ? "💳" : "👥"}
+                    </span>
+                    <div>
+                      <div style={{ fontWeight: 500, fontSize: 15, marginBottom: 4 }}>0{i + 1}. {b.title}</div>
+                      <div style={{ fontSize: 15, color: t.textMuted ?? "#555" }}>Trị giá thực tế: <s>{bonusPrice} VNĐ</s> — <span style={{ color: GREEN }}>Bàn giao trọn gói</span></div>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </Card>
 
             {/* TESTIMONIALS */}
             <Card>
-              <Lbl>Góc chia sẻ thật từ những anh chị em đã áp dụng</Lbl>
+              <Lbl>Góc chia sẻ thật từ những Creator & Học viên đã áp dụng</Lbl>
               {((c as any).checkoutTestimonials || [
                 { 
                   name: "Chị Thu Lan", 
-                  role: "Chủ shop Thời trang nữ (Hà Nội)", 
-                  text: "Đúng là biết thế đăng ký học sớm cho đỡ tốn tiền đi mua điện thoại mới. Mình quay bằng con máy cũ mà áp dụng cách setup 2 cái đèn của thầy xong, lên hình nhìn da dẻ nổi khối đắt tiền hẳn. Bữa đăng video lên mấy khách quen còn nhắn tin hỏi 'Nay shop đầu tư thuê studio quay à' =)) Hình ảnh sang lên cái là khách tin tưởng, chốt đơn cũng dễ hơn hẳn." 
+                  role: "Chủ shop Thời trang (Hà Nội)", 
+                  text: "Trước đây mỗi lần viết kịch bản video bán hàng là vò đầu bứt tai cả buổi chiều. Áp dụng Bộ Mega Prompt của Thầy Việt, nhập thông tin sản phẩm vào 5 phút là có ngay kịch bản phân cảnh 2 cột chi tiết từng giây. Video quay nhanh gấp 3 lần, đơn về đều đặn!" 
                 },
                 { 
                   name: "Anh Minh Đức", 
-                  role: "Đào tạo Kỹ năng & Tư vấn (Đà Nẵng)", 
-                  text: "Sợ nhất cái khoản cứ nhìn thẳng vào ống kính là mắt lác lác xong đơ như khúc gỗ, quay chục lần mới xong cái clip. Áp dụng cái bài đổi góc quay chéo chéo giống đang trò chuyện, xong biết cách lấy cảnh trám lấp liếm mấy chỗ nói vấp, giờ làm video tự nhiên và đĩnh đạc hơn bao nhiêu. Đặc biệt quả Trợ lý AI kịch bản nhàn thật sự, ném chủ đề vào là ra kịch bản quay luôn. Đáng đồng tiền bát gạo!" 
+                  role: "Đào tạo & Xây kênh Nhân hiệu (Đà Nẵng)", 
+                  text: "Cái Agent Phân Tích Video của thầy đỉnh thực sự. Chỉ cần gửi link video đối thủ vào là nó tự bóc tách cỡ cảnh, trích kịch bản và phân tích nhịp cắt. Giúp mình tiết kiệm hàng chục tiếng nghiên cứu trend mỗi tuần. Đáng đồng tiền bát gạo!" 
                 },
                 { 
                   name: "Quốc Bảo", 
-                  role: "Kinh doanh & Phân phối Mỹ phẩm (TP. HCM)", 
-                  text: "Hồi xưa mình cứ thấy người ta làm hiệu ứng giật giật lật trang trên Tiktok là đú theo, chả hiểu sao chạy quảng cáo toàn lỗ. Xem bài cỡ cảnh với luật nhịp điệu 3 giây mới vỡ lẽ ra, bán hàng là video phải êm ái khách mới chịu xem. Đổi góc quay cận cảnh sản phẩm mượt mượt tí, dạo này chạy Ads chi phí ra tin nhắn giảm hẳn mà khách chốt đều, không hỏi lằng nhằng nhiều nữa. Cảm ơn thầy!" 
+                  role: "Freelancer & Bán Sản Phẩm Số (TP. HCM)", 
+                  text: "Mình hoàn toàn không biết lập trình mà nhờ Template Landing Page và quy trình của thầy, trong 15 phút mình tự dựng được trang bán sản phẩm số có thanh toán VietQR tự động. Tiền về tài khoản ngay cả khi đang ngủ. Cảm ơn thầy nhiều!" 
                 },
               ]).map((testimonial: any, i: number) => (
                 <div key={i} style={{ borderTop: i === 0 ? "none" : `1px solid ${t.line}`, paddingTop: i === 0 ? 0 : 16, marginBottom: 16 }}>
@@ -892,11 +932,11 @@ function CheckoutContent() {
         {/* ── FINAL CTA BAR ── */}
         <div style={{ marginTop: 40, background: `linear-gradient(135deg, ${t.card}, ${t.card2})`, border: `1px solid ${t.accent}33`, borderRadius: t.cardRadius, padding: "32px 24px", textAlign: "center" }}>
           <Lbl>Bước cuối cùng</Lbl>
-          <h2 style={{ fontFamily: t.fontDisplay, fontSize: "clamp(20px, 3.5vw, 32px)", fontWeight: 500, lineHeight: 1.15, letterSpacing: "-0.018em", margin: "0 0 12px", color: t.textBase ?? "#fff" }}>
+          <h2 className="cl-sh" style={{ fontSize: "clamp(24px, 4vw, 36px)" }}>
             Chuyển khoản ngay và bắt đầu<br /><span style={{ color: t.accent, fontWeight: 500 }}>lột xác hình ảnh chuyên gia hôm nay.</span>
           </h2>
           <p style={{ fontSize: 15, color: t.textBody ?? "#777", marginBottom: 24, lineHeight: 1.65 }}>
-            Trong khi những người khác vẫn chật vật với clip "phèn" và tuyệt vọng nhìn khách lướt qua — bạn sẽ thảnh thơi với dòng khách tự động chuyển đổi nhờ Tư Duy Làm Video Điện Thoại: Quay Là Cuốn.
+            Trong khi những người khác vẫn chật vật với công việc làm tay tốn thời gian và công sức — bạn sẽ thảnh thơi vì 80% công việc đã được tự động hóa nhờ Hệ Thống AI Creator.
           </p>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -917,10 +957,10 @@ function CheckoutContent() {
         {/* ── FOOTER ── */}
         <div style={{ textAlign: "center", paddingTop: 48, borderTop: `1px solid ${t.line}`, marginTop: 40 }}>
           <div style={{ fontFamily: t.fontDisplay, fontSize: 20, fontWeight: 500, marginBottom: 12, color: t.textBase ?? "#fff" }}>
-            VIDEO<span style={{ color: t.accent }}>.</span>
+            AI CREATOR<span style={{ color: t.accent }}>.</span>
           </div>
           <p style={{ fontSize: 15, color: t.textMuted ?? "#444", lineHeight: 1.8 }}>
-            © 2026 Tư Duy Làm Video Điện Thoại: Quay Là Cuốn · fedu.vn · Mọi quyền được bảo lưu.<br />
+            © 2026 AI Creator System · fedu.vn · Mọi quyền được bảo lưu.<br />
             <a href="mailto:vietndj@gmail.com" style={{ color: t.textMuted ?? "#555" }}>vietndj@gmail.com</a> | Zalo: 0934.688.632
           </p>
         </div>

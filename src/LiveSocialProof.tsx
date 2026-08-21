@@ -1,26 +1,21 @@
 import { useEffect, useState } from "react";
 
 const PROOFS = [
-  // NHÓM 1: POP-UP "SỞ HỮU VŨ KHÍ & TÀI LIỆU" (Kích thích lòng tham)
-  "Tuấn Anh (Hà Nội) vừa tải về thành công Bộ Prompt AI Kịch bản 2 cột cho ChatGPT 🤖",
-  "Chị Lan (Chủ Shop - HCM) vừa nhận trọn bộ Tài liệu quy hoạch 7 loại B-roll minh họa 📁",
-  "Hoàng Dũng (Đà Nẵng) vừa mở khóa kho dữ liệu Giải mã cấu trúc Video Trend Âu/Hàn 🔍",
-  "Trang Phạm (Hải Phòng) vừa lưu về máy Sơ đồ Cài đặt Ánh sáng 3 Điểm chuẩn Studio 💡",
-  "Thảo Vy (Solopreneur) vừa nhận đặc quyền Tặng Kèm Trợ Lý AI Kịch bản 🎁",
-
-  // NHÓM 2: POP-UP "TIẾN ĐỘ THỰC HÀNH CỦA HỌC VIÊN" (Xóa bỏ nỗi sợ mua về vứt xó)
-  "Anh Minh (Hà Nội) đang xem bài giảng Kỹ thuật Chuyển cảnh tàng hình (Cut on Action) ✂️",
-  "Vy (Chủ Spa - Bình Dương) vừa truy cập Module Luân chuyển Ma trận Cỡ cảnh Toàn - Trung - Cận 🎥",
-  "Đức Dũng (HCM) đang học bài Chữa bệnh đơ: Giải phóng ngôn ngữ cơ thể trước ống kính 🧘‍♂️",
-  "Chị Mai (Bắc Ninh) vừa mở khóa bài học Luật Nhịp điệu 3 giây giữ chân khách hàng ⏱️",
-  "Team Media Tuấn (Cần Thơ) đang xem hướng dẫn Giữ vững Kỷ luật đường mắt 1/3 📐",
-
-  // NHÓM 3: POP-UP "GIAO DỊCH THỰC TẾ & SỰ ĐỒNG HÀNH" (Tăng độ Trust tuyệt đối)
-  "Hải Đăng (Kinh doanh TMĐT) vừa thiết lập xong Góc quay Talking Head cố định 🎙️",
-  "Chị Trâm Anh (Đà Lạt) vừa chốt cọc 500k để giữ vĩnh viễn Ưu đãi Quà tặng AI ⚡",
-  "Anh Sơn (Nha Trang) vừa được hệ thống cấp quyền vào Nhóm hỗ trợ sửa video trực tiếp 🤝",
-  "Bác sĩ Khánh (Hà Nội) vừa nâng cấp lên Gói Expert để chuẩn hóa kênh nhân hiệu 🚀",
-  "Chị Phương (Đồng Nai) vừa quét QR thanh toán tự động, nhận ID đăng nhập sau 2 phút 📩"
+  "Chị Minh Anh (HN) vừa đăng ký Coaching thành công 🌟",
+  "Anh Tuấn & Chị Hương vừa tham gia chương trình Kết Nối Gia Đình 🤝",
+  "Chị Ngọc Thảo (Đà Nẵng) vừa đặt lịch đánh giá chuyên sâu vòng 1 🗓️",
+  "Anh Hoàng (HCM) vừa thanh toán thành công khóa Coaching 8 tuần 💳",
+  "Chị Lan Phương (Hải Phòng) vừa nhận Workbook Bản Đồ Cảm Xúc 📖",
+  "Gia đình anh chị Tú (Cần Thơ) đã bắt đầu tuần thứ 2 của lộ trình 🚀",
+  "Chị Thu Thủy (Hà Nội) vừa chia sẻ cảm nhận tích cực trong Nhóm Kín 💬",
+  "Vợ chồng anh Dũng (Bình Dương) vừa hoàn thành bài tập giao tiếp không bạo lực 🗣️",
+  "Chị Mai Linh (Vũng Tàu) vừa thanh toán thành công qua chuyển khoản TPBank 📩",
+  "Anh Đức Hùng (Nha Trang) vừa tham gia cộng đồng chia sẻ tài chính gia đình 💰",
+  "Chị Kim Oanh (HCM) vừa kết thúc phiên Coaching cá nhân hóa đầu tiên 🌱",
+  "Chị Hạnh (Hà Nội) vừa giữ suất tham gia giới hạn của tháng này ⏱️",
+  "Anh Quang Bảo (Đà Lạt) vừa phản hồi sự cải thiện rõ rệt sau 4 tuần 📈",
+  "Vợ chồng chị Thanh Huyền (Đồng Nai) vừa thiết lập lại kế hoạch tài chính chung 📊",
+  "Chị Bích Ngọc (Quảng Ninh) vừa tải thành công tài liệu hỗ trợ tâm lý 🧠"
 ];
 
 const TIME_LABELS = [
@@ -32,6 +27,9 @@ const TIME_LABELS = [
 ];
 
 export default function LiveSocialProof() {
+  // Tạm thời tắt popup người mua hàng để tập trung làm nội dung
+  return null;
+
   const [currentIdx, setCurrentIdx] = useState(0);
   const [timeLabel, setTimeLabel] = useState("vừa xong");
   const [visible, setVisible] = useState(false);

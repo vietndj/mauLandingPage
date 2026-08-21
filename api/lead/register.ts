@@ -66,26 +66,6 @@ function validateInput(name: string, email: string, phone: string): string | nul
   return null;
 }
 
-async function sendTelegramNotification(message: string) {
-  const botToken = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.TELEGRAM_CHAT_ID;
-  if (!botToken || !chatId) return;
-  
-  try {
-    await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        chat_id: chatId,
-        text: message,
-        parse_mode: "HTML",
-      }),
-    });
-  } catch (e) {
-    console.error("Telegram notification failed:", e);
-  }
-}
-
 export default async function handler(
   req: VercelRequest,
   res: VercelResponse
@@ -102,7 +82,7 @@ export default async function handler(
     if (errorMsg) {
       return res.status(400).json({ error: errorMsg });
     }
-    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz3s4V-cItvUcM3g-oZy0mAWsxGXr9UhLhz_qPgXWZgFNTT9KgKZxu391m-aRv8rz8U/exec";
+    const GOOGLE_SCRIPT_URL = process.env.GOOGLE_SCRIPT_URL || "";
 
     if (!GOOGLE_SCRIPT_URL) {
       console.warn("GOOGLE_SCRIPT_URL is not set. Cannot save to Google Sheets.");
@@ -131,14 +111,6 @@ export default async function handler(
     } catch (scriptErr) {
       console.error("Failed to append to Google Sheet:", scriptErr);
     }
-
-    await sendTelegramNotification(
-      `📋 <b>LEAD MỚI!</b>\n\n` +
-      `👤 <b>${name}</b>\n` +
-      `📱 ${phone}\n` +
-      `📧 ${email}\n` +
-      `🕐 ${new Date().toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" })}`
-    );
 
     return res.status(200).json({ success: true, rowIndex: -1 });
   } catch (err: any) {

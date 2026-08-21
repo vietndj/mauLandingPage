@@ -12,7 +12,7 @@ export function SkillsSection() {
     <Sec id="skills" maxWidth={860}>
       <FadeIn>
         <div style={{ textAlign: "center", marginBottom: 54 }}>
-          <Label>4 NGUYÊN LÝ KIẾN TRÚC KHUNG HÌNH</Label>
+          <Label>{c.skillsLabel || "4 CẤP ĐỘ TIẾN HÓA AI CHO CREATOR"}</Label>
           <SH typed>{c.skillsHeading}</SH>
         </div>
       </FadeIn>
@@ -28,11 +28,11 @@ export function SkillsSection() {
                 borderRadius: t.cardRadius,
               }}>
                 <div className="cl-skill-content">
-                  <h4 style={{ fontFamily: t.fontDisplay, fontSize: "clamp(18px, 3vw, 26px)", lineHeight: 1.15, letterSpacing: "-0.018em", fontWeight: 500, color: "#fff", margin: "0 0 16px 0", display: "flex", alignItems: "flex-start", gap: 12 }}>
+                  <h4 style={{ fontFamily: t.fontDisplay, fontSize: "clamp(18px, 3vw, 26px)", lineHeight: 1.15, letterSpacing: "-0.018em", fontWeight: 500, color: "var(--cl-text-base, #111827)", margin: "0 0 16px 0", display: "flex", alignItems: "flex-start", gap: 12 }}>
                     <span style={{ fontFamily: t.fontMono, fontSize: "clamp(20px, 2.5vw, 24px)", color: t.accent, marginTop: 4 }}>{card.n}</span>
                     <span style={{ textWrap: "balance" }}>{card.title}</span>
                   </h4>
-                  <p style={{ fontSize: "clamp(15px, 3.8vw, 18px)", lineHeight: 1.75, color: "#cbd5e1", margin: 0 }}>{card.desc}</p>
+                  <p style={{ fontSize: "clamp(15px, 3.8vw, 18px)", lineHeight: 1.75, color: "var(--cl-text-body, #374151)", margin: 0 }}>{card.desc}</p>
                 </div>
                 
                 <div className="cl-skill-media" style={{ aspectRatio: card.aspectRatio || "3 / 4" }}>

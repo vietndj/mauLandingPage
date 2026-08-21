@@ -1,7 +1,7 @@
 import React from "react";
 import { useContent } from "../content";
 import { useTheme } from "../theme";
-import { FadeIn, Label, Sec } from "../components/ui";
+import { FadeIn, Label, SH, Sec, Sub } from "../components/ui";
 
 export function CycleSection() {
   const c = useContent();
@@ -11,63 +11,66 @@ export function CycleSection() {
       <FadeIn>
         <div style={{ textAlign: "center", marginBottom: 54 }}>
           <Label>{c.cycleLabel}</Label>
-          <h2 style={{ fontFamily: t.fontDisplay, fontSize: "clamp(26px, 6vw, 48px)", fontWeight: 500, lineHeight: 1.15, letterSpacing: "-0.018em", color: "#fff", margin: "16px 0" }}>
-            {c.cycleHeading}
-          </h2>
-          <p style={{ fontSize: "clamp(15px, 3.8vw, 19px)", color: "var(--cl-text-muted, #888)", maxWidth: 720, margin: "0 auto", lineHeight: 1.75 }}>
-            {c.cyclePara}
-          </p>
+          <SH>{c.cycleHeading}</SH>
+          <Sub>{c.cyclePara}</Sub>
         </div>
       </FadeIn>
 
       <FadeIn delay={100}>
-        {c.cycleItems[0] && (
-          <div style={{
-            background: `linear-gradient(135deg, ${t.accent}0a, transparent)`,
-            border: `1px solid ${t.accent}33`,
-            borderRadius: t.cardRadius,
-            padding: "clamp(20px, 5vw, 48px)",
-            textAlign: "center",
-            maxWidth: 720,
-            margin: "0 auto 48px",
-            position: "relative",
-            overflow: "hidden"
-          }}>
-            <div style={{
-              position: "absolute",
-              top: "-50%",
-              left: "50%",
-              transform: "translateX(-50%)",
-              width: "80%",
-              height: "200%",
-              background: `radial-gradient(ellipse at top, ${t.accent}15, transparent 70%)`,
-              pointerEvents: "none",
-            }} />
-            
-            <h3 style={{ 
-              fontFamily: t.fontBody, 
-              fontSize: "clamp(20px, 4.5vw, 26px)", 
-              fontWeight: 500, 
-              color: "#fff", 
-              marginBottom: 20,
-              letterSpacing: "-0.02em",
-              maxWidth: 500,
-              margin: "0 auto 20px"
+        <div style={{
+          display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 24, maxWidth: 860, margin: "0 auto"
+        }}>
+          {(c.cycleSteps || []).map((item, idx) => (
+            <div key={idx} style={{
+              background: `linear-gradient(135deg, ${t.accent}0a, transparent)`,
+              border: `1px solid ${t.accent}33`,
+              borderRadius: t.cardRadius,
+              padding: "clamp(20px, 4vw, 32px)",
+              textAlign: "center",
+              position: "relative",
+              overflow: "hidden",
+              display: "flex",
+              flexDirection: "column",
+              gap: 12
             }}>
-              {c.cycleItems[0].fail}
-            </h3>
-            
-            <p style={{ 
-              fontSize: "clamp(15px, 3.8vw, 19px)", 
-              lineHeight: 1.85, 
-              color: "#cbd5e1", 
-              margin: 0,
-              fontWeight: 400 
-            }}>
-              {c.cycleItems[0].why}
-            </p>
-          </div>
-        )}
+              <div style={{
+                position: "absolute",
+                top: "-50%",
+                left: "50%",
+                transform: "translateX(-50%)",
+                width: "80%",
+                height: "200%",
+                background: `radial-gradient(ellipse at top, ${t.accent}15, transparent 70%)`,
+                pointerEvents: "none",
+              }} />
+              
+              <div style={{ fontFamily: t.fontMono, fontSize: 12, fontWeight: 600, color: "var(--cl-accent)", letterSpacing: "0.1em", textTransform: "uppercase" }}>
+                // BƯỚC 0{idx + 1}
+              </div>
+
+              <h3 style={{ 
+                fontFamily: t.fontBody, 
+                fontSize: "clamp(18px, 3.5vw, 22px)", 
+                fontWeight: 700, 
+                color: "var(--cl-text-base, #111827)", 
+                margin: "4px 0 8px",
+                letterSpacing: "-0.015em"
+              }}>
+                {item.title}
+              </h3>
+              
+              <p style={{ 
+                fontSize: "clamp(14px, 3.2vw, 16px)", 
+                lineHeight: 1.75, 
+                color: "var(--cl-text-body, #374151)", 
+                margin: 0,
+                fontWeight: 400 
+              }}>
+                {item.desc}
+              </p>
+            </div>
+          ))}
+        </div>
       </FadeIn>
     </Sec>
   );

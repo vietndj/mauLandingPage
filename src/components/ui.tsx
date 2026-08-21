@@ -96,7 +96,9 @@ export function ScrollTypewriter({ text, speed = 10, delay = 0, highlightText }:
               <span key={idx} style={{ position: "relative", display: "inline" }}>
                 <span style={{
                   color: isTyped ? (isHighlighted ? "var(--cl-accent)" : "inherit") : "transparent",
-                  fontWeight: isHighlighted ? 600 : "inherit",
+                  fontFamily: isHighlighted ? "var(--cl-font-accent)" : "inherit",
+                  fontStyle: isHighlighted ? "italic" : "inherit",
+                  fontWeight: isHighlighted ? 300 : "inherit",
                   userSelect: isTyped ? "auto" : "none",
                   pointerEvents: isTyped ? "auto" : "none",
                 }}>
@@ -202,6 +204,15 @@ export function SH({ children, center = true, typed = false }: { children: React
     <h2 className={center ? "cl-sh" : "cl-sh cl-sh--left"}>
       {typed && textStr ? <ScrollTypewriter text={textStr} speed={12} /> : children}
     </h2>
+  );
+}
+
+export function Sub({ children, center = true, style = {} }: { children: React.ReactNode; center?: boolean; style?: React.CSSProperties }) {
+  if (!children) return null;
+  return (
+    <p className={center ? "cl-sub" : "cl-sub cl-sub--left"} style={style}>
+      {children}
+    </p>
   );
 }
 

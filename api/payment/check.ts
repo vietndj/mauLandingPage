@@ -2,7 +2,7 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 
 declare const process: any;
 const SEPAY_API_KEY = process.env.SEPAY_API_KEY ?? "";
-const COURSE_AMOUNT = parseInt(process.env.COURSE_AMOUNT || "599000", 10);
+const COURSE_AMOUNT = parseInt(process.env.COURSE_AMOUNT || "0", 10);
 
 interface SePayTransaction {
   id: string;

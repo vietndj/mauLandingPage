@@ -1,7 +1,7 @@
 import React from "react";
 import { useContent } from "../content";
 import { useTheme } from "../theme";
-import { FadeIn, Label, SH, Sec } from "../components/ui";
+import { FadeIn, Label, SH, Sec, Sub } from "../components/ui";
 
 export function PainSection() {
   const c = useContent();
@@ -12,21 +12,19 @@ export function PainSection() {
         <div style={{ textAlign: "center", marginBottom: 44 }}>
           <Label>{c.painLabel}</Label>
           <SH typed>{c.painHeading}</SH>
+          <Sub>{c.painSub}</Sub>
         </div>
       </FadeIn>
       
       <FadeIn delay={100}>
-        <p style={{ fontSize: "clamp(16px, 1.8vw, 18px)", lineHeight: 1.8, color: "var(--cl-text-body, #b0b0b0)", marginBottom: 36, textAlign: "center" }}>
-          {(c as any).painSub || c.painPara}
-        </p>
         <div style={{ display: "flex", flexDirection: "column", gap: 14, marginBottom: 48 }}>
-          {((c as any).pains || c.painList)?.map((p: string, i: number) => (
+          {c.pains.map((p: string, i: number) => (
             <div key={i} style={{ 
               display: "flex", gap: 12, alignItems: "flex-start", background: "rgba(255, 255, 255, 0.01)",
               border: "1px solid rgba(255, 255, 255, 0.03)", borderRadius: 12, padding: "16px 20px", textAlign: "left",
             }}>
               <span style={{ color: "var(--cl-accent)", fontSize: 18, lineHeight: 1.2 }}>—</span>
-              <p style={{ fontSize: 17, lineHeight: 1.75, color: "#f1f5f9", margin: 0 }}>
+              <p style={{ fontSize: 17, lineHeight: 1.75, color: "var(--cl-text-base, #111827)", margin: 0 }}>
                 {p}
               </p>
             </div>
@@ -38,10 +36,10 @@ export function PainSection() {
         <blockquote style={{
           borderLeft: `3px solid var(--cl-accent)`, paddingLeft: "clamp(14px, 3.5vw, 24px)", margin: "0 auto", maxWidth: 680,
           fontFamily: t.blockquoteFontFamily ?? t.fontAccent, fontStyle: t.blockquoteFontStyle ?? "italic",
-          fontWeight: t.blockquoteFontWeight ?? 400, fontSize: "clamp(16px, 3.8vw, 21px)", color: "#fff", 
+          fontWeight: t.blockquoteFontWeight ?? 400, fontSize: "clamp(16px, 3.8vw, 21px)", color: "var(--cl-text-base, #111827)", 
           lineHeight: 1.7, textAlign: "left",
         }}>
-          “{(c as any).painQuote || c.painBlockquote}”
+          “{c.painQuote}”
         </blockquote>
       </FadeIn>
 

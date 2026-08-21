@@ -1,37 +1,27 @@
-// src/site.config.ts
-// Central configuration for the landing page template.
-// The Antigravity skill will auto-populate this file.
-
 export const siteConfig = {
-  // === THÔNG TIN SẢN PHẨM ===
   product: {
-    name: "Bộ Template Video Bất Động Sản Pro",
-    price: "149.000",           // Giá bán ưu đãi (format: "149.000")
-    originalPrice: "990.000",   // Giá gốc (format: "990.000")
+    name: "Chương Trình Coaching Thấu Hiểu Bản Thân & Kết Nối Gia Đình",
+    price: "1.990.000",
+    originalPrice: "5.990.000",
+    category: "coaching tâm lý",
+    transferPrefix: "COACHING",
   },
-  // === THANH TOÁN ===
+  seller: {
+    name: "Nguyễn Đức Việt",
+    phone: "0934688632",
+    email: "vietndj@gmail.com",
+    zalo: "0934688632",
+  },
   payment: {
-    bankCode: "TPB",           // Mã ngân hàng VietQR (MB, TPB, VCB, TCB, ACB...)
-    accountNumber: "88804101986", // Số tài khoản thật
-    accountName: "NGUYEN DUC VIET", // Tên chủ tài khoản (IN HOA, không dấu)
-    transferPrefix: "BDS149K",   // Tiền tố nội dung CK
+    bankCode: "TPB",
+    bankName: "TPBank",
+    accountNumber: "88804101986",
+    accountName: "NGUYEN DUC VIET",
   },
-  // === THÔNG BÁO ===
-  notifications: {
-    telegramBotToken: "",     // Token bot Telegram
-    telegramChatId: "",       // Chat ID nhận thông báo
-    resendApiKey: "",         // API key Resend.com (tùy chọn)
-    sellerEmail: "vietndj@gmail.com", // Email người bán nhận thông báo
-    buyerEmailTemplate: {
-      subject: "🎉 Đơn hàng Bộ Template Video BĐS Pro thành công!",
-      productLink: "",        // Link sản phẩm gửi cho khách
-    },
-  },
-  // === BRANDING ===
   branding: {
-    siteName: "BĐS Video Pro",
-    footerBrand: "BĐS VIDEO PRO",
-    footerCopyright: "© 2026 BĐS Video Pro. All rights reserved.",
+    siteName: "INNER COMPASS",
+    footerBrand: "INNER COMPASS",
+    domain: "innercompass.vn",
+    copyright: "COPYRIGHT 2026 | INNER COMPASS — THẤU HIỂU ĐỂ KẾT NỐI",
   },
-};
-
+}

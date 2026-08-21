@@ -1,0 +1,75 @@
+# 🚀 Web Bán Hàng Tự Động — Hướng Dẫn Sử Dụng
+
+## Bạn Cần Có
+
+1. **Antigravity** (đi kèm gói Google Gemini Pro) — đã cài trên máy
+2. **Node.js** — tải tại https://nodejs.org (bản LTS)
+3. **Tài khoản Vercel** — đăng ký miễn phí tại https://vercel.com
+
+> Nếu chưa có Antigravity, sản phẩm này KHÔNG sử dụng được.
+
+---
+
+## Hướng Dẫn 3 Bước
+
+### Bước 1: Giải nén và mở trong Antigravity
+
+1. Giải nén file `web-ban-hang-auto.zip`
+2. Mở thư mục vừa giải nén bằng Antigravity IDE (hoặc VS Code có Antigravity extension)
+
+### Bước 2: Nói cho AI biết bạn muốn bán gì
+
+Mở chat Antigravity và gõ 1 câu, ví dụ:
+
+> "Tạo web bán Bộ Preset Lightroom Ảnh Cưới giá 199k"
+
+Hoặc:
+
+> "Tạo landing page bán khoá học nấu ăn online 499k"
+
+Hoặc:
+
+> "Tạo web bán dịch vụ xăm thẩm mỹ giá 2 triệu"
+
+### Bước 3: Trả lời 1 câu hỏi
+
+AI sẽ hỏi bạn **1 câu duy nhất**: Thông tin tài khoản ngân hàng nhận tiền.
+
+Sau đó AI sẽ **tự động**:
+- ✅ Viết toàn bộ nội dung bán hàng phù hợp sản phẩm của bạn
+- ✅ Thiết kế giao diện đẹp, chuyên nghiệp
+- ✅ Tích hợp thanh toán VietQR tự động
+- ✅ Deploy lên Vercel → trả cho bạn link web live
+
+**Xong!** Bạn nhận được link web bán hàng hoạt động ngay.
+
+---
+
+## Sau Khi Có Web
+
+### Cấu hình SePay (để nhận thông báo khi có đơn)
+1. Đăng ký tại https://sepay.vn
+2. Kết nối tài khoản ngân hàng của bạn
+3. Vào **API → Tạo webhook** → paste URL:
+   ```
+   https://[tên-web-của-bạn].vercel.app/api/payment/webhook
+   ```
+
+### Muốn sửa nội dung web?
+Nói tiếp với Antigravity:
+> "Sửa headline thành ..." hoặc "Đổi giá thành 399k"
+
+AI sẽ sửa và deploy lại cho bạn.
+
+---
+
+## Câu Hỏi Thường Gặp
+
+**Q: Có mất phí Vercel không?**
+A: Không. Gói miễn phí của Vercel đủ dùng cho landing page bán hàng.
+
+**Q: Có thể tạo nhiều web bán hàng khác nhau không?**
+A: Có. Mỗi lần nói "tạo web bán..." sẽ tạo một trang mới.
+
+**Q: Web có tự nhận tiền không?**
+A: Có, nếu bạn đã cấu hình SePay. Khi khách quét QR thanh toán, SePay sẽ tự phát hiện và thông báo cho bạn qua Telegram.
